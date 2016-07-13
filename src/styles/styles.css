@@ -1,0 +1,38 @@
+#app {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  min-width: 550px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+a.active {
+  color: orange;
+}
+
+nav {
+  padding-top: 20px;
+}
+
+.contentContainer {
+    position: relative;
+    width: inherit;
+}
+
+.hideInput {
+    display: none !important;
+}
+
+.labelButton {
+    position: relative;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background: #333;
+    color: #fff;
+    /*border: none;*/
+    cursor: pointer;
+    width: 95%;
+    margin: 1% auto;
+}
