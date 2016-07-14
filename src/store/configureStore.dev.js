@@ -21,7 +21,7 @@ const enhancer = compose(
             /[?&]debug_session=([^&]+)\b/
         )
     )
-)
+);
 
 export default function configureStore(initialState) {
     // Nota Immutable.fromJS á state hérna? Sjá QU lausnina
