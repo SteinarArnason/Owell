@@ -15,24 +15,24 @@ nav {
 }
 
 .contentContainer {
-    position: relative;
-    width: inherit;
+  position: relative;
+  width: inherit;
 }
 
 .hideInput {
-    display: none !important;
+  display: none;
 }
 
 .labelButton {
-    position: relative;
-    text-align: center;
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    background: #333;
-    color: #fff;
-    /*border: none;*/
-    cursor: pointer;
-    width: 95%;
-    margin: 1% auto;
+  position: relative;
+  text-align: center;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  background: #333;
+  color: #fff;
+  /*border: none;*/
+  cursor: pointer;
+  width: 95%;
+  margin: 1% auto;
 }
