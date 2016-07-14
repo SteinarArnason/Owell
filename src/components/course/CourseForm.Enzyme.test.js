@@ -1,19 +1,21 @@
 import expect from 'expect';
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-import TestUtils from 'react-addons-test-utils';
 import CourseForm from './CourseForm';
 
 function setup(saving) {
   let props = {
-    course: {}, saving: saving, errors: {},
+    course: {},
+    allAuthors: [],
+    saving: saving,
+    errors: {},
     onSave: () => {},
     onChange: () => {}
   };
   return shallow(<CourseForm {...props} />);
 }
 
-describe('CourseForm via React Test Utils', () => {
+describe('CourseForm via Enzyme', () => {
   it('renders form and h1', () => {
     const wrapper = setup(false);
     expect(wrapper.find('form').length).toBe(1);
