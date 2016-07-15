@@ -2,9 +2,19 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as fileImporterActions from '../../actions/fileImporterActions';
+import * as fileImporterActions from 'actions/fileImporterActions';
+
+import styles from './FileImporterPage.css';
 
 class FileImporterPage extends Component {
+
+    // Það sem er ætlast til þess að þessi component hafi aðgang að.
+    // Þetta er síðan bundið saman í mapStateToProps() fallinu.
+    // actions þarf ekki að vera skilgreint hér því það er bundið
+    // sérstaklega saman við componentið í mapDispatchToProps() fallinu.
+    static propTypes = {
+        file: PropTypes.object.isRequired
+    }
 
     constructor(props, context) {
         super(props, context);
@@ -57,7 +67,7 @@ class FileImporterPage extends Component {
 
         return (
             <div className="contentContainer">
-                <h1>File Importer</h1>
+                <h1 className="blueHeader">File Importer</h1>
                 <label
                     htmlFor="fileInput"
                     className="labelButton" >{this.state.filename}</label>
@@ -74,18 +84,14 @@ class FileImporterPage extends Component {
     }
 }
 
-FileImporterPage.propTypes = {
-    actions: PropTypes.object.isRequired,
-    file: PropTypes.object
-};
-
 function mapStateToProps(state, ownProps) {
     // console.log(state);
     // console.log(ownProps);
     return {
-        file: state.file
+        file: state.file || {}
     };
 }
+
 
 function mapDispatchToProps(dispatch) {
   return {
