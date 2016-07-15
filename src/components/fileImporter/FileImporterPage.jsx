@@ -76,7 +76,7 @@ class FileImporterPage extends Component {
 
 FileImporterPage.propTypes = {
     actions: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired
+    file: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {

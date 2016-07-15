@@ -5,7 +5,16 @@ import { connect } from 'react-redux';
 // Import úr öðru
 import Header from './common/Header';
 
+/*connect((state) => ({
+  loading: state.get('ajaxCallsInProgress')
+}))*/
 class App extends Component {
+
+  static propTypes = {
+    children: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired
+  }
+
   render() {
     return (
       <div>
@@ -18,10 +27,10 @@ class App extends Component {
 
 // Það þarf alltaf að skilgreina hvaða props component tekur á móti
 // isRequired er ekki nauðsynlegt nema fyrir validation ef það er nauðsynlegt
-App.propTypes = {
+/*App.propTypes = {
   children: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
-};
+};*/
 
 // mapStateToProps(state, ownProps)
 // state hérna er tengingin við REDUX state-ið
