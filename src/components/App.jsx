@@ -23,7 +23,8 @@ class App extends Component {
 }
 
 // Það þarf alltaf að skilgreina hvaða props component tekur á móti
-// isRequired er ekki nauðsynlegt nema fyrir validation ef það er nauðsynlegt
+// isRequired er ekki nauðsynlegt nema fyrir validation ef component-ið
+// þarf að innihalda viðkomandi props
 /*App.propTypes = {
   children: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
@@ -31,7 +32,7 @@ class App extends Component {
 
 // mapStateToProps(state, ownProps)
 // state hérna er tengingin við REDUX state-ið
-// ownProps er eitthvað annað ¯\_(ツ)_/¯
+// ownProps er eitthvað annað ¯\_(ツ)_/¯ (t.d. params úr url-i)
 function mapStateToProps(state, ownProps) {
   return {
     loading: state.ajaxCallsInProgress > 0
