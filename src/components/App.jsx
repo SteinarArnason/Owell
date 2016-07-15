@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 // Import úr öðru
 import Header from './common/Header';
 
-/*connect((state) => ({
-  loading: state.get('ajaxCallsInProgress')
-}))*/
 class App extends Component {
 
   static propTypes = {

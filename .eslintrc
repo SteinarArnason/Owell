@@ -5,6 +5,7 @@
     "plugin:import/warnings"
   ],
   "plugins": [
+    "eslint-plugin-react",
     "react"
   ],
   "parserOptions": {
@@ -12,14 +13,14 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
-      "modules": true
+      "modules": true,
+      "classes": true
     }
   },
   "env": {
     "es6": true,
     "browser": true,
     "node": true,
-    "jquery": true,
     "mocha": true
   },
   "rules": {
