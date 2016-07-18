@@ -16,7 +16,7 @@ render(
   <Provider store={store}>
     <div>
       <Router history={browserHistory} routes={routes} />
-      <DevTools />
+      {__DEV__ && <DevTools />}
     </div>
   </Provider>,
   document.getElementById('app')
