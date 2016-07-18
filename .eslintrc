@@ -4,6 +4,9 @@
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
+  "globals": {
+    "__DEV__": false
+  },
   "plugins": [
     "eslint-plugin-react",
     "react"
@@ -28,6 +31,8 @@
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
+    "import/default": 0,
+    "import/no-unresolved": 0,
     "semi": [1, "always"],
     "no-trailing-spaces": 0,
     "eol-last": 0,
