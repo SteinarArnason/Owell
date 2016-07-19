@@ -1,16 +1,30 @@
 {
   "extends": [
-    "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
+
+  "settings": {
+    "import/resolve": {
+      "extensions": [".js", ".jsx"],
+      "moduleDirectory": ["./node_modules", "."]
+    },
+    "import/ignore": {
+      ".css"
+    }
+  },
+
+  "parser": "babel-eslint",
+
   "globals": {
     "__DEV__": false
   },
+
   "plugins": [
     "eslint-plugin-react",
     "react"
   ],
+
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -20,42 +34,271 @@
       "classes": true
     }
   },
+
   "env": {
-    "es6": true,
     "browser": true,
-    "node": true,
-    "mocha": true
+    "es6": true,
+    "mocha": true,
+    "node": true
   },
+
   "rules": {
-    "quotes": 0,
+
+    # ESLint rules
+    # for detailed examples see: eslint.org/docs/rules
+    ## Possible errors
+    "no-cond-assign": [1, "always"],
     "no-console": 1,
+    "no-constant-condition": 2,
+    "no-control-regex": 1, #Subject to change
     "no-debugger": 1,
-    "no-var": 1,
-    "import/default": 0,
-    "import/no-unresolved": 0,
-    "semi": [1, "always"],
-    "no-trailing-spaces": 0,
-    "eol-last": 0,
-    "no-unused-vars": 0,
-    "no-underscore-dangle": 0,
-    "no-alert": 0,
-    "no-lone-blocks": 0,
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-empty": 2,
+    "no-empty-character-class": 1,
+    "no-ex-assign": 2,
+    "no-extra-boolean-cast": 1,
+    "no-extra-parens": 1, #Subject to change
+    "no-extra-semi": 2,
+    "no-func-assign": 1, #Subject to change
+    "no-inner-declarations": 1, #Subject to change
+    "no-invalid-regexp": 1, #Subject to change
+    "no-irregular-whitespace": 2, #Subject to change
+    "no-negated-in-lhs": 1, #Subject to change
+    "no-obj-calls": 2,
+    "no-prototype-builtins": 2,
+    "no-regex-spaces": 2,
+    "no-sparse-arrays": 2,
+    "no-unexpected-multiline": 1, #Subject to change
+    "no-unreachable": 2,
+    "no-unsafe-finally": 1,
+    "use-isnan": 2,
+    "valid-jsdoc": 0,
+    "valid-typeof": 1,
+
+    ## Best Practices
+    "accessor-pairs": 0,
+    "array-callback-return": 1,
+    "block-scoped-var": 2,
+    "complexity": [1, {"max": 4}],
+    "consistent-return": 0,
+    "curly": [1, "all"],
+    "default-case": 2,
+    "dot-location": [2, "property"],
+    "dot-notation": 1,
+    "eqeqeq": 0, #Subject to change
+    "guard-for-in": 1, #Subject to change
+    "no-alert": 2,
+    "no-caller": 2,
+    "no-case-declarations": 0, #Subject to change
+    "no-div-regex": 1, #Subject to change
+    "no-else-return": 2,
+    "no-empty-function": 0, #Subject to change
+    "no-empty-pattern": 1,
+    "no-eq-null": 1, #Subject to change
+    "no-eval": 2, #Subject to change
+    "no-extend-native": 1, #Subject to change
+    "no-extra-bind": 0,
+    "no-extra-label": 0,
+    "no-fallthrough": 1,
+    "no-floating-decimal": 2,
+    "no-implicit-coercion": 2,
+    "no-implicit-globals": 1,
+    "no-implied-eval": 1,
+    "no-invalid-this": 1,
+    "no-iterator": 2,
+    "no-labels": 0,
+    "no-lone-blocks": 1,
+    "no-loop-func": 1,
+    "no-magic-numbers": 0,
+    "no-multi-spaces": 1, #Subject to change
+    "no-multi-str": 2,
+    "no-native-reassign": 1,
+    "no-new": 1,
+    "no-new-func": 2,
+    "no-new-wrappers": 1,
+    "no-octal": 0,
+    "no-octal-escape": 1,
+    "no-param-reassign": 1,
+    "no-proto": 2,
+    "no-redeclare": 2,
+    "no-return-assign": [2, "always"],
+    "no-script-url": 2,
+    "no-self-assign": 1,
+    "no-self-compare": 2,
+    "no-sequences": 1, #Subject to change
+    "no-throw-literal": 0,
+    "no-unmodified-loop-condition": 1,
+    "no-unused-expressions": 1,
+    "no-unused-labels": 2,
+    "no-useless-call": 1,
+    "no-useless-concat": 2,
+    "no-useless-escape": 1,
+    "no-void": 2,
+    "no-warning-comments": 1,
+    "no-with": 1,
+    "radix": 1,
+    "vars-on-top": 1,
+    "wrap-iife": 1,
+    "yoda": 1,
+
+    ## Variables
+    "init-declarations": 0,
+    "no-catch-shadow": 2,
+    "no-delete-var": 2,
+    "no-label-var": 2,
+    "no-restricted-globals": 1,
+    "no-shadow": 2,
+    "no-shadow-restricted-names": 2,
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-undefined": 2,
+    "no-unused-vars": [1, {"varsIgnorePattern": "styles"}],
+    "no-use-before-define": 2,
+
+    ## Node.js and CommonJS
+    "callback-return": 2,
+    "global-require": 1,
+    "handle-callback-err": 2,
+    "no-mixed-requires": 2,
+    "no-new-require": 1,
+    "no-path-concat": 2,
+    "no-process-env": 1,
+    "no-process-exit": 1,
+    "no-restricted-modules": 0,
+    "no-sync": 0, #Subject to change
+
+    ## Stylistic Issues
+    ### Let the controversy begin!
+    "array-bracket-spacing": [1, "always", {"singleValue": true, "objectsInArrays": true, "arraysInArrays": true}],
+    "block-spacing": 1,
+    "brace-style": [1, "1tbs", {"allowSingleLine": true}],
+    "camelcase": 0,
+    "comma-dangle": [1, "only-multiline"],
+    "comma-spacing": 1,
+    "comma-style": 1,
+    "computed-property-spacing": 1,
+    "consistent-this": 0,
+    "eol-last": 1,
+    "func-names": 0,
+    "func-style": [1, "declaration", {"allowArrowFunctions": true}], #Subject to change
+    "id-blacklist": [1, "err", "*Err", "e", "cb"],
+    "id-length": 0, #Subject to change
+    "id-match": 0, #Subject to change
+    "indent": [1, 2, {"SwitchCase": 1}], #Subject to change #http://ukupat.github.io/tabs-or-spaces/
     "jsx-quotes": 1,
+    "key-spacing": 1,
+    "keyword-spacing": 1,
+    "linebreak-style": 0,
+    "lines-around-comment": 1, #Subject to change
+    "max-depth": 1, #Subject to change
+    "max-len": 0, #Subject to change
+    "max-lines": 0, #Subject to change
+    "max-nested-callbacks": [1, {"max": 4}], #Subject to change
+    "max-params": [1, {"max": 4}], #Subject to change
+    "max-statements": 0, #Subject to change
+    "max-statements-per-line": [1, {"max": 2}], #Subject to change
+    "multiline-ternary": 0,
+    "new-cap": 0,
+    "new-parens": 1,
+    "newline-after-var": 0,
+    "newline-before-return": 0, #Subject to change
+    "newline-per-chained-call": [1, {"ignoreChainWithDepth": 4}], #Subject to change
+    "no-array-constructor": 1, #Subject to change
+    "no-bitwise": 1, #Subject to change
+    "no-continue": 1, #Subject to change
+    "no-inline-comments": 0,
+    "no-lonely-if": 1,
+    "no-mixed-operators": 1, #Subject to change #Possible conflict with no-extra-parens, referr to docs
+    "no-mixed-spaces-and-tabs": 2, #Subject to change
+    "no-multiple-empty-lines": [1, {"max": 1, "maxEOF": 1, "maxBOF": 0}], #Subject to change
+    "no-negated-conditions": 0,
+    "no-nested-ternary": 1, #Subject to change #wat.
+    "no-new-object": 1, #Subject to change
+    "no-plusplus": [1, {"allowForLoopAfterthoughts": true}], #Subject to change
+    "no-restricted-syntax": 0,
+    "no-spaced-func": 1, #Subject to change
+    "no-ternary": 0,
+    "no-trailing-spaces": 1,
+    "no-underscore-dangle": 1,
+    "no-unneeded-ternary": 1, #Subject to change
+    "no-whitespace-before-property": 1, #Subject to change
+    "object-curly-newline": 0, #Subject to change
+    "object-curly-spacing": [1, "always", {"objectsInObjects": true, "arraysInObjects": true}], #Subject to change
+    "object-property-newline": 0, #Subject to change
+    "one-var": 0, #Subject to change
+    "one-var-declaration-per-line": 0, #Subject to change
+    "operator-assignment": 0,
+    "operator-linebreak": 0, #Subject to configuration #TODO Configure this
+    "padded-blocks": 0,
+    "quote-props": [1, "as-needed"],
+    "quotes": [1, "single", "avoid-escape"],
+    "require-jsdoc": 0,
+    "semi": [1, "always"],
+    "semi-spacing": 1,
+    "sort-vars": 0,
+    "space-before-blocks": 1,
+    "space-before-function-paren": [1, "never"],
+    "space-in-parens": 1, #Subject to change
+    "space-infix-ops": 1,
+    "space-unary-ops": 1, #Subject to change
+    "spaced-comment": 1, #Subject to change
+    "unicode-bom": 0,
+    "wrap-regex": 1, #Subject to change
+
+    ## ECMAScript 6
+    "arrow-body-style": [1, "always"],
+    "arrow-parens": 1,
+    "arrow-spacing": 1,
+    "constructor-super": 1,
+    "generator-star-spacing": 0, #Subject to change #article explaining generators: https://davidwalsh.name/es6-generators
+    "no-class-assign": 1, #Subject to change
+    "no-confusing-arrow": 1, #Subject to change
+    "no-const-assign": 1,
+    "no-dupe-class-members": 1,
+    "no-duplicate-imports": 1, #Subject to change
+    "no-new-symbol": 1,
+    "no-restricted-imports": 0, #Subject to change
+    "no-this-before-super": 1, #Subject to change
+    "no-useless-computed-key": 1, #Subject to change
+    "no-useless-constructor": 1, #Subject to change
+    "no-useless-rename": 1, #Subject to change
+    "no-var": 1,
+    "object-shorthand": 1, #Subject to change
+    "prefer-arrow-callback": 1, #Subject to change
+    "prefer-const": 0,
+    "prefer-reflect": 1, #Subject to change
+    "prefer-rest-params": 1, #Subject to change
+    "prefer-spread": 1, #Subject to change
+    "prefer-template": 1, #Subject to change
+    "require-yield": 1, #Subject to change
+    "rest-spread-spacing": 1, #Subject to change
+    "sort-imports": 0,
+    "template-curly-spacing": [1, "always"],
+    "yield-star-spacing": [1, "before"],
+
+    #ESLint plugin React
+    #TODO Set all the rules fresh (reconfigure the ones below)
+
+    "import/default": 1,
+    "import/no-unresolved": 1,
+    "import/extensions": [2, {"js": "never", "jsx": "never", "css": "always"}],
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
     "react/jsx-boolean-value": 1,
-    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-closing-bracket-location": 1, #This changed from 0 somehow
     "react/jsx-curly-spacing": 1,
-    "react/jsx-indent-props": 0,
+    "react/jsx-indent-props": 1, #This changed from 0 somehow
     "react/jsx-key": 1,
-    "react/jsx-max-props-per-line": 0,
+    "react/jsx-max-props-per-line": 1, #This changed from 0 somehow
     "react/jsx-no-bind": 1,
     "react/jsx-no-duplicate-props": 1,
-    "react/jsx-no-literals": 0,
+    "react/jsx-no-literals": 1, #This changed from 0 somehow
     "react/jsx-no-undef": 1,
     "react/jsx-pascal-case": 1,
-    "react/jsx-sort-prop-types": 0,
-    "react/jsx-sort-props": 0,
+    "react/jsx-sort-prop-types": 1, #This changed from 0 somehow
+    "react/jsx-sort-props": 1, #This changed from 0 somehow
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/no-danger": 1,
@@ -63,7 +306,7 @@
     "react/no-did-update-set-state": 1,
     "react/no-direct-mutation-state": 1,
     "react/no-multi-comp": 1,
-    "react/no-set-state": 0,
+    "react/no-set-state": 1, #This changed from 0 somehow
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
@@ -71,6 +314,6 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1, #This changed from 0 somehow
   }
 }
