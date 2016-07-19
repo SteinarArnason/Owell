@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import DevTools from '../DevTools';
 
-const middleware = [thunk, reduxImmutableStateInvariant()];
+const middleware = [ thunk, reduxImmutableStateInvariant() ];
 
 const enhancer = compose(
   // Middleware for development
@@ -30,7 +30,7 @@ export default function configureStore(initialState) {
   // Hot reload reducers (Webpack HMR has to be enabled)
   if (module.hot) {
     module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers'))
+      store.replaceReducer(require('../reducers')) //eslint-disable-line
     );
   }
 
