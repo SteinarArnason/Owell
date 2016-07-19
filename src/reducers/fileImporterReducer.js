@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 export default function fileImporterReducer(state = initialState.file, action) {
-  switch(action.type) {
+  switch (action.type) {
     case types.PARSE_FILE_SUCCESS:
       return action.file;
     default:
