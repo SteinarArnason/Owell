@@ -1,3 +1,4 @@
+/*
 import webpack from 'webpack';
 import path from 'path';
 
@@ -38,3 +39,4 @@ export default {
     extensions: ['', '.js', '.jsx', '.css']
   }
 };
+*/
