@@ -3,17 +3,14 @@ import { createStore } from 'redux';
 import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
 
-describe('Store', function() {
-  it('should handle creating courses', function() {
-    //arrange
+describe('Store', () => {
+  it('should handle creating courses', () => {
+    // arrange
     const store = createStore(rootReducer, initialState);
-    const course = {
-      title: 'Clean Code'
-    };
 
-    //act
+    // act
 
-    //assert
-    expect(true).toEqual(true);
+    // assert
+    expect(store).toEqual(store);
   });
 });
