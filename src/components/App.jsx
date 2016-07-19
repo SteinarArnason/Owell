@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Import úr node_modules
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
@@ -9,13 +10,12 @@ class App extends Component {
 
   static propTypes = {
     children: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
   }
 
   render() {
     return (
       <div>
-        <Header loading={this.props.loading}/>
+        <Header />
         {this.props.children}
       </div>
     );
@@ -25,7 +25,7 @@ class App extends Component {
 // Það þarf alltaf að skilgreina hvaða props component tekur á móti
 // isRequired er ekki nauðsynlegt nema fyrir validation ef component-ið
 // þarf að innihalda viðkomandi props
-/*App.propTypes = {
+/* App.propTypes = {
   children: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
 };*/
@@ -33,10 +33,10 @@ class App extends Component {
 // mapStateToProps(state, ownProps)
 // state hérna er tengingin við REDUX state-ið
 // ownProps er eitthvað annað ¯\_(ツ)_/¯ (t.d. params úr url-i)
-function mapStateToProps(state, ownProps) {
+/* function mapStateToProps(state, ownProps) {
   return {
     loading: state.ajaxCallsInProgress > 0
   };
-}
+}*/
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);
