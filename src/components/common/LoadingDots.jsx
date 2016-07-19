@@ -26,7 +26,7 @@ class LoadingDots extends React.Component {
       text += '.';
       dots--;
     }
-    return (<span {...this.props}>{text}&nbsp;</span>);
+    return <span {...this.props}>{text}&nbsp;</span>;
   }
 }
 
@@ -35,8 +35,8 @@ LoadingDots.defaultProps = {
 };
 
 LoadingDots.propTypes = {
-  interval: PropTypes.number,
-  dots: PropTypes.number
+  dots: PropTypes.number,
+  interval: PropTypes.number
 };
 
 export default LoadingDots;
