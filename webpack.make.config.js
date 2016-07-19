@@ -1,5 +1,4 @@
-'use strict';
-
+/* eslint-disable object-shorthand */
 import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -13,13 +12,13 @@ module.exports = function(options) {
 
   const devEntry = [
     'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
     './src/index'
   ];
   const productionEntry = './src/index';
 
   const output = {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   };
@@ -28,22 +27,22 @@ module.exports = function(options) {
 
   let module = {
     loaders: [
-      {test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-      {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
-      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
+      { test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: [ 'babel' ] },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+      { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
     ]
   };
 
   if (options.development) {
     module.loaders.push(
-      {test: /(\.css)$/, loaders: ['style', 'css']}
+      { test: /(\.css)$/, loaders: [ 'style', 'css' ] }
     );
   } else {
     options.plugins.push(new ExtractTextPlugin('styles.css'));
     module.loaders.push(
-      {test: /(\.css)$/, loader: ExtractTextPlugin.extract('css?sourceMap')}
+      { test: /(\.css)$/, loader: ExtractTextPlugin.extract('css?sourceMap') }
     );
   }
 
@@ -58,8 +57,8 @@ module.exports = function(options) {
     plugins: options.plugins,
     module: module,
     resolve: {
-      modulesDirectories: ['node_modules', 'src'],
-      extensions: ['', '.js', '.jsx', '.css']
+      modulesDirectories: [ 'node_modules', 'src' ],
+      extensions: [ '', '.js', '.jsx', '.css' ]
     }
   };
 };
