@@ -20,14 +20,13 @@ class FileImporterPage extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {
-      filename: 'Choose File',
-      file: {}
-    };
-
     // Doing binds is reccomended here to improve performance on renders.
     this.onFileSelected = this.onFileSelected.bind(this);
     this.parseFile = this.parseFile.bind(this);
+  }
+
+  state = {
+    filename: 'Choose File',
   }
 
   componentWillReceiveProps(nextProps) {
@@ -47,35 +46,36 @@ class FileImporterPage extends Component {
     reader.onload = () => {
       const filename = inputFile.name;
       const fileContent = JSON.stringify(reader.result);
-      this.setState({ filename }); // sama og: { filename: filename }
+      this.setState({ filename });
       this.parseFile(fileContent);
     };
   }
 
   parseFile(fileContent) {
     this.props.actions.parseFile(fileContent)
-      .then((parsedFile) => {
-          // console.log(this.state);
+      .then(() => {
+        // XXX File has been parsed, do something more...
       })
-      .catch((error) => {
-          // console.log(error);
+      .catch((error) => { // eslint-disable-line
+        // console.log(error);
       });
   }
 
   render() {
     return (
       <div className="contentContainer">
-        <h1 className="blueHeader">File Importer</h1>
+        <h1 className="blueHeader">{ 'File Importer' }</h1>
         <label
-            className="labelButton"
-            htmlFor="fileInput">{this.state.filename}</label>
+          className="labelButton"
+          htmlFor="fileInput" >
+          { this.state.filename }
+        </label>
         <input
-            accept=".txt" // XXX Might need to be validated depending on how onFileSelected is implemented
-            className="hideInput"
-            id="fileInput"
-            onChange={this.onFileSelected}
-            type="file" />
-
+          accept=".txt" // XXX Might need to be validated depending on how onFileSelected is implemented
+          className="hideInput"
+          id="fileInput"
+          onChange={ this.onFileSelected }
+          type="file" />
         <br />
       </div>
     );
