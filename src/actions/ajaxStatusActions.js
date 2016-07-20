@@ -1,9 +1,9 @@
-import * as types from './actionTypes';
+import * as constants from 'constants';
 
 export function beginAjaxCall() {
-  return { type: types.BEGIN_AJAX_CALL };
+  return { type: constants.BEGIN_AJAX_CALL };
 }
 
 export function ajaxCallError() {
-  return { type: types.AJAX_CALL_ERROR };
+  return { type: constants.AJAX_CALL_ERROR };
 }

@@ -1,9 +1,9 @@
-import * as types from './actionTypes';
+import * as constants from 'constants';
 import fileImporterApi from '../api/mockFileImporterApi';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 
 export function parseFileSuccess(file) {
-  return { type: types.PARSE_FILE_SUCCESS, file }; // sama og: { file: file }
+  return { type: constants.PARSE_FILE_SUCCESS, file }; // sama og: { file: file }
   // return { type: types.PARSE_FILE_SUCCESS, file};
 }
 
