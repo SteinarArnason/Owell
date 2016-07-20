@@ -1,4 +1,4 @@
-/*eslint-disable import/default */
+/* eslint-disable import/default */
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
@@ -13,10 +13,12 @@ import DevTools from './DevTools';
 const store = configureStore();
 
 render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <div>
-      <Router history={browserHistory} routes={routes} />
-      {__DEV__ && <DevTools />}
+      <Router
+        history={ browserHistory }
+        routes={ routes } />
+      { __DEV__ && <DevTools /> }
     </div>
   </Provider>,
   document.getElementById('app')
