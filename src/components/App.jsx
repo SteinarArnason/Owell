@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars, react/prefer-stateless-function */
 // Import úr node_modules
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {this.props.children}
+        { this.props.children }
       </div>
     );
   }
@@ -27,7 +27,7 @@ class App extends Component {
 // þarf að innihalda viðkomandi props
 /* App.propTypes = {
   children: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
 };*/
 
 // mapStateToProps(state, ownProps)
