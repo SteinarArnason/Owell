@@ -1,6 +1,7 @@
 import React from 'react';
 
-class AboutPage extends React.Component {
+// Example way of doing it with/without stateless component
+/* class AboutPage extends React.Component {
   render() {
     return (
       <div>
@@ -9,6 +10,16 @@ class AboutPage extends React.Component {
       </div>
     );
   }
-}
+}*/
+
+// This is stateless
+const AboutPage = () => {
+  return (
+    <div>
+      <h1>{ 'Pluralsight Admin' }</h1>
+      <p>{ 'Lorem ipsum dolor sit amet. Banana apple juice.' }</p>
+    </div>
+  );
+};
 
 export default AboutPage;
