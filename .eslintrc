@@ -136,7 +136,7 @@
     "no-useless-concat": 2,
     "no-useless-escape": 1,
     "no-void": 2,
-    "no-warning-comments": 1,
+    "no-warning-comments": [1, {"terms": ["todo"]}],
     "no-with": 1,
     "radix": 1,
     "vars-on-top": 1,
@@ -279,41 +279,60 @@
     "yield-star-spacing": [1, "before"],
 
     #ESLint plugin React
-    #TODO Set all the rules fresh (reconfigure the ones below)
-
-    "import/default": 1,
-    "import/no-unresolved": 1,
-    "import/extensions": [2, {"js": "never", "jsx": "never", "css": "always"}],
+    ##Supported rules
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
-    "react/jsx-boolean-value": 1,
-    "react/jsx-closing-bracket-location": 1, #This changed from 0 somehow
-    "react/jsx-curly-spacing": 1,
-    "react/jsx-indent-props": 1, #This changed from 0 somehow
-    "react/jsx-key": 1,
-    "react/jsx-max-props-per-line": 1, #This changed from 0 somehow
-    "react/jsx-no-bind": 1,
-    "react/jsx-no-duplicate-props": 1,
-    "react/jsx-no-literals": 1, #This changed from 0 somehow
-    "react/jsx-no-undef": 1,
-    "react/jsx-pascal-case": 1,
-    "react/jsx-sort-prop-types": 1, #This changed from 0 somehow
-    "react/jsx-sort-props": 1, #This changed from 0 somehow
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
+    "react/no-comment-textnodes": 1,
     "react/no-danger": 1,
-    "react/no-did-mount-set-state": 1,
-    "react/no-did-update-set-state": 1,
+    "react/no-deprecated": 0, #Deprecated
+    "react/no-did-mount-set-state": 1, #Subject to change
+    "react/no-did-update-set-state": 1, #Subject to change
     "react/no-direct-mutation-state": 1,
+    "react/no-is-mounted": 1,
     "react/no-multi-comp": 1,
-    "react/no-set-state": 1, #This changed from 0 somehow
+    "react/no-render-return-value": 1,
+    "react/no-set-state": 0,
+    "react/no-string-refs": 1, #Subject to change
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
+    "react/prefer-stateless-function": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 1,
+    "react/require-optimization": 0, #Subject to change
+    "react/require-render-return": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1, #This changed from 0 somehow
+    "react/sort-prop-types": [1, {"requiredFirst": true}],
+    "react/wrap-multilines": 1,
+
+    ##JSX-specific rules
+    "react/jsx-boolean-value": 1,
+    "react/jsx-closing-bracket-location": [1, {"selfClosing": "after-props", "nonEmpty": "after-props"}], #This changed from 0 somehow
+    "react/jsx-curly-spacing": [1, "always"],
+    "react/jsx-equals-spacing": 1,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": [1, "multiline"],
+    "react/jsx-handler-names": 0, #Subject to change
+    "react/jsx-indent": [1, 2],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-key": 1,
+    "react/jsx-max-props-per-line": 1, #Subject to change
+    "react/jsx-no-bind": 1,
+    "react/jsx-no-duplicate-props": 1,
+    "react/jsx-no-literals": 1, #Subject to change
+    "react/jsx-no-target-blank": 1,
+    "react/jsx-no-undef": 1,
+    "react/jsx-pascal-case": 1,
+    "react/jsx-sort-props": 0, #Subject to change
+    "react/jsx-space-before-closing": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+
+    #ESLint plugin import
+    ##Using reccomended (see: extends at top of file) settings with minor tweaks
+    "import/default": 1,
+    "import/no-unresolved": 1,
+    "import/extensions": [2, {"js": "never", "jsx": "never", "css": "always"}],
   }
 }
