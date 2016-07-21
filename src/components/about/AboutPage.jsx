@@ -16,8 +16,8 @@ import React from 'react';
 const AboutPage = () => {
   return (
     <div>
-      <h1>{ 'Pluralsight Admin' }</h1>
-      <p>{ 'Lorem ipsum dolor sit amet. Banana apple juice.' }</p>
+      <h1>{ 'Something about the author/page/company' }</h1>
+      <p>{ 'No need for an autobiography, just a short and concise, to the point description.' }</p>
     </div>
   );
 };
