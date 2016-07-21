@@ -120,7 +120,7 @@
     "no-new-wrappers": 1,
     "no-octal": 0,
     "no-octal-escape": 1,
-    "no-param-reassign": 1,
+    "no-param-reassign": 0,
     "no-proto": 2,
     "no-redeclare": 2,
     "no-return-assign": [2, "always"],
@@ -317,7 +317,7 @@
     "react/jsx-indent": [1, 2],
     "react/jsx-indent-props": [1, 2],
     "react/jsx-key": 1,
-    "react/jsx-max-props-per-line": 1, #Subject to change
+    "react/jsx-max-props-per-line": [1, {"maximum": 2}], #Subject to change
     "react/jsx-no-bind": 1,
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-literals": 1, #Subject to change
