@@ -21,8 +21,11 @@ class FileImporterPage extends Component {
     super(props, context);
 
     // Doing binds is reccomended here to improve performance on renders.
-    this.onFileSelected = this.onFileSelected.bind(this);
-    this.parseFile = this.parseFile.bind(this);
+    // Using an experimental function bind with the ::this.functionName syntax
+    // this.onFileSelected = this.onFileSelected.bind(this);
+    // this.parseFile = this.parseFile.bind(this);
+    this.onFileSelected = ::this.onFileSelected;
+    this.parseFile = ::this.parseFile;
   }
 
   state = {
