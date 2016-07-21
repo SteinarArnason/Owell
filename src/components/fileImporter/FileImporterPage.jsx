@@ -28,6 +28,9 @@ class FileImporterPage extends Component {
     this.parseFile = ::this.parseFile;
   }
 
+  // Component specific variables/Settings, something that
+  // is unique to this component and doesn't need to be
+  // in the store
   state = {
     filename: 'Choose File',
   }
