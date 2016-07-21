@@ -1,11 +1,17 @@
-import * as constants from 'constants';
-import initialState from './initialState';
+import Immutable from 'immutable';
+import { createReducer } from 'redux-immutablejs';
 
-export default function fileImporterReducer(state = initialState.file, action) {
-  switch (action.type) {
-    case constants.PARSE_FILE_SUCCESS:
-      return action.file;
-    default:
-      return state;
+import * as constants from 'constants';
+
+const initialState = Immutable.fromJS({
+  file: {},
+});
+
+export default createReducer(initialState, {
+
+  [constants.PARSE_FILE_SUCCESS]: (state, { file }) => {
+    state = state.set('file', file);
+    return state;
   }
-}
+
+});

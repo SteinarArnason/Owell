@@ -1,17 +1,27 @@
+import Immutable from 'immutable';
+import { createReducer } from 'redux-immutablejs';
+
 import * as constants from 'constants';
-import initialState from './initialState';
 
-function actionTypeEndsInSuccess(constant) {
-  return constant.substring(constant.length - 8) == '_SUCCESS';
-}
+const initialState = Immutable.fromJS({
+  ajaxCallsInProgress: 0,
+});
 
-export default function(state = initialState.ajaxCallsInProgress, action) {
-  if (action.type == constants.BEGIN_AJAX_CALL) {
-    return state + 1;
-  } else if (action.type == constants.AJAX_CALL_ERROR ||
-    actionTypeEndsInSuccess(action.type)) {
-    return state - 1;
-  }
+export default createReducer(initialState, {
 
-  return state;
-}
+  [constants.AJAX_CALL_START]: (state) => {
+    state = state.set('ajaxCallsInProgress', state.get('ajaxCallsInProgress') + 1);
+    return state;
+  },
+
+  [constants.AJAX_CALL_ERROR]: (state) => {
+    state = state.set('ajaxCallsInProgress', state.get('ajaxCallsInProgress') - 1);
+    return state;
+  },
+
+  [constants.AJAX_CALL_SUCCESS]: (state) => {
+    state = state.set('ajaxCallsInProgress', state.get('ajaxCallsInProgress') - 1);
+    return state;
+  },
+
+});
