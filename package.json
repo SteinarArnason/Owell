@@ -1,7 +1,7 @@
 {
-  "name": "pluralsight-redux-starter",
+  "name": "boilerplate-starting-point",
   "version": "1.0.0",
-  "description": "Boilerplate code using React and Redux with Mocha/Enzyme unit tests and ES6 syntax",
+  "description": "Boilerplate code using React and Redux with Mocha/Enzyme unit tests and ES6/ES7 syntax",
   "license": "MIT",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
