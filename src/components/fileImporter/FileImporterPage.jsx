@@ -10,8 +10,6 @@ class FileImporterPage extends Component {
 
   // Það sem er ætlast til þess að þessi component hafi aðgang að.
   // Þetta er síðan bundið saman í mapStateToProps() fallinu.
-  // actions þarf ekki að vera skilgreint hér því það er bundið
-  // sérstaklega saman við componentið í mapDispatchToProps() fallinu.
   static propTypes = {
     actions: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired
