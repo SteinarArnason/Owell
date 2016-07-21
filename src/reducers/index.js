@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutablejs';
 import file from './fileImporterReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   file,
   ajaxCallsInProgress
 });
-
-export default rootReducer;
