@@ -4,10 +4,12 @@ import { Route, IndexRoute } from 'react-router';
 import App from 'components/App';
 import FileImporterPage from 'components/fileImporter/FileImporterPage';
 import AboutPage from 'components/about/AboutPage';
+import HomePage from 'components/home/HomePage';
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRoute component={ FileImporterPage } />
+    <IndexRoute component={ HomePage } />
+    <Route path="file-importer" component={ FileImporterPage } />
     <Route path="about" component={ AboutPage } />
   </Route>
 );
