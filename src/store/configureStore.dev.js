@@ -2,9 +2,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
+import Immutable from 'immutable';
 
-import rootReducer from '../reducers';
-import DevTools from '../DevTools';
+import rootReducer from 'reducers';
+import DevTools from 'DevTools';
 
 const middleware = [ thunk, reduxImmutableStateInvariant() ];
 
@@ -25,7 +26,7 @@ const enhancer = compose(
 
 export default function configureStore(initialState) {
   // Nota Immutable.fromJS á state hérna? Sjá QU lausnina
-  const store = createStore(rootReducer, initialState, enhancer);
+  const store = createStore(rootReducer, Immutable.fromJS(initialState), enhancer);
 
   // Hot reload reducers (Webpack HMR has to be enabled)
   if (module.hot) {
