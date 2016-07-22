@@ -1,7 +1,10 @@
 import expect from 'expect';
 import Immutable from 'immutable';
-import * as actions from '../actions/todoActions';
+
+// Any imports not from node_modules have to be done relative to current path
+// so that unit tests run correctly
 import reducer from './todoReducer';
+import * as actions from '../actions/todoActions';
 
 const initialState = Immutable.fromJS({
   todos: [
@@ -14,7 +17,7 @@ const initialState = Immutable.fromJS({
 
 describe('todoReducer', () => {
 
-  it('should be the first passing test in the todoReducer', () => {
+  it('Placeholder test', () => {
     // arrange
 
     // act
