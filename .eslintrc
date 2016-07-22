@@ -216,7 +216,7 @@
     "no-negated-conditions": 0,
     "no-nested-ternary": 1, #Subject to change #wat.
     "no-new-object": 1, #Subject to change
-    "no-plusplus": [1, {"allowForLoopAfterthoughts": true}], #Subject to change
+    "no-plusplus": 0, #Subject to change
     "no-restricted-syntax": 0,
     "no-spaced-func": 1, #Subject to change
     "no-ternary": 0,
