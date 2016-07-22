@@ -26,6 +26,19 @@ describe('todoReducer', () => {
     expect(true).toEqual(true);
   });
 
+  it('should initially have 4 entries in the array', () => {
+    // arrange
+    const initialTodoReducerState = reducer(initialState);
+
+    // act
+
+    // assert
+    expect(initialTodoReducerState.get('todos').count())
+      .toEqual(4);
+    expect(initialTodoReducerState.get('todos').toJS())
+      .toEqual(initialState.get('todos').toJS());
+  });
+
   it('should add a todo to our list of todos', () => {
     // arrange
     const newTodo = 'npm run start';
@@ -35,6 +48,10 @@ describe('todoReducer', () => {
     const newState = reducer(initialState, action);
 
     // assert
-    expect(newState.get('todos').count()).toEqual(5);
+    const todos5 = Immutable.fromJS({ id: 10, isDone: false, text: 'npm run start' });
+    expect(newState.get('todos').count())
+      .toEqual(5);
+    expect(newState.get('todos').last())
+      .toEqual(todos5);
   });
 });
