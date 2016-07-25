@@ -1,13 +1,13 @@
-import * as constants from 'constants';
+import constants from 'constants';
 
 export function ajaxCallStart() {
-  return { type: constants.AJAX_CALL_START };
+  return { type: constants.AJAX.CALL_START };
 }
 
 export function ajaxCallError() {
-  return { type: constants.AJAX_CALL_ERROR };
+  return { type: constants.AJAX.CALL_ERROR };
 }
 
 export function ajaxCallSuccess() {
-  return { type: constants.AJAX_CALL_SUCCESS };
+  return { type: constants.AJAX.CALL_SUCCESS };
 }

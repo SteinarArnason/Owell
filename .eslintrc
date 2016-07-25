@@ -216,7 +216,7 @@
     "no-negated-conditions": 0,
     "no-nested-ternary": 1, #Subject to change #wat.
     "no-new-object": 1, #Subject to change
-    "no-plusplus": [1, {"allowForLoopAfterthoughts": true}], #Subject to change
+    "no-plusplus": 0, #Subject to change
     "no-restricted-syntax": 0,
     "no-spaced-func": 1, #Subject to change
     "no-ternary": 0,
@@ -318,7 +318,7 @@
     "react/jsx-indent-props": [1, 2],
     "react/jsx-key": 1,
     "react/jsx-max-props-per-line": [1, {"maximum": 2}], #Subject to change
-    "react/jsx-no-bind": 1,
+    "react/jsx-no-bind": [1, {"allowArrowFunctions": true}],
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-literals": 1, #Subject to change
     "react/jsx-no-target-blank": 1,
