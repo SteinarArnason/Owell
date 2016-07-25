@@ -1,12 +1,13 @@
 # Boilerplate
 
 ## What it includes
- - React
- - Redux
- - Webpack
- - Mocha & Enzyme
- - Babel with ES6 & ES7 support
- - Hot reloading
+ - [React](https://facebook.github.io/react/docs/getting-started.html)
+ - [Redux](http://redux.js.org/index.html)
+ - [ImmutableJS](https://facebook.github.io/immutable-js/)
+ - [Webpack](http://webpack.github.io/docs/)
+ - [Mocha](https://mochajs.org/) & [Enzyme](https://github.com/airbnb/enzyme/tree/master/docs)
+ - [Babel](https://babeljs.io/) with ES6 & ES7 support
+ - Hot reloading in development
 
 ## Usage
 ### Development
