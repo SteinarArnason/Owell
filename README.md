@@ -21,3 +21,9 @@
   When running the production build script the contents of the /src folder will be minimized and put into a bundle file along with relevant html documents and other files needed to serve the website.
 
 #### -> npm run build
+
+## Special thanks
+  The project is largely based on the following course by Cory House on [Pluralsight](https://www.pluralsight.com/courses/react-redux-react-router-es6 "Building Applications with React and Redux in ES6") so be sure to check it out.
+
+## Other helpful links
+  TBD
