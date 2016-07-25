@@ -26,6 +26,7 @@ class TodoPage extends Component {
     };
 
     this.onSubmit = ::this.onSubmit;
+    this.toggleTodo = ::this.toggleTodo;
   }
 
   onSubmit(event) {
@@ -34,6 +35,10 @@ class TodoPage extends Component {
       this.props.actions.addTodo(text);
       event.target.value = '';
     }
+  }
+
+  toggleTodo(listId) {
+    this.props.actions.toggleTodo(listId);
   }
 
   render() {
@@ -46,7 +51,9 @@ class TodoPage extends Component {
           type="text"
           placeholder="Add todo"
           onKeyDown={ this.onSubmit } />
-        <TodoList todos={ this.props.todos } />
+        <TodoList
+          todos={ this.props.todos }
+          toggle={ this.toggleTodo } />
       </div>
     );
   }
