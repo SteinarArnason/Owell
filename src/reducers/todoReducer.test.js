@@ -54,4 +54,63 @@ describe('todoReducer', () => {
     expect(newState.get('todos').last())
       .toEqual(todos5);
   });
+
+  describe('toggleTodo()', () => {
+
+    it('should toggle the isDone field where {id: 0} in the list to false', () => {
+      // arrange
+      const action = actions.toggleTodo(initialState.get('todos').first().get('id'));
+      const expectedOutcome = [
+        { id: 0, isDone: false, text: 'make components' },
+        { id: 1, isDone: false, text: 'design actions' },
+        { id: 2, isDone: false, text: 'TDD implement reducers' },
+        { id: 3, isDone: false, text: 'connect components' },
+      ];
+
+      // act
+      const newState = reducer(initialState, action);
+
+      // assert
+      expect(newState.get('todos').toJS())
+        .toEqual(expectedOutcome);
+    });
+
+    it('should toggle the isDone field where {id: 1} in the list to true', () => {
+      // arrange
+      const action = actions.toggleTodo(initialState.get('todos').get(1).get('id'));
+      const expectedOutcome = [
+        { id: 0, isDone: true, text: 'make components' },
+        { id: 1, isDone: true, text: 'design actions' },
+        { id: 2, isDone: false, text: 'TDD implement reducers' },
+        { id: 3, isDone: false, text: 'connect components' },
+      ];
+
+      // act
+      const newState = reducer(initialState, action);
+
+      // assert
+      expect(newState.get('todos').toJS())
+        .toEqual(expectedOutcome);
+    });
+
+    it('should not change anything when trying to update an item that does not exist', () => {
+      // arrange
+      const action = actions.toggleTodo(9000);
+      const expectedOutcome = [
+        { id: 0, isDone: true, text: 'make components' },
+        { id: 1, isDone: false, text: 'design actions' },
+        { id: 2, isDone: false, text: 'TDD implement reducers' },
+        { id: 3, isDone: false, text: 'connect components' },
+      ];
+
+      // act
+      const newState = reducer(initialState, action);
+
+      // assert
+      expect(newState.get('todos').toJS())
+        .toEqual(expectedOutcome);
+    });
+
+  });
+
 });

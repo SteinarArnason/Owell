@@ -19,8 +19,22 @@ export default createReducer(initialState, {
       isDone: false,
       text: todo,
     });
-    state = state.set('todos', state.get('todos').push(newTodo));
+
+    state = state.updateIn([ 'todos' ], (array) => { return array.push(newTodo); });
     return state;
-  }
+  },
+
+  [constants.TODO.TOGGLE]: (state, { id }) => {
+    const index = state.get('todos').findIndex((item) => {
+      return item.get('id') === id;
+    });
+
+    if (index !== -1) {
+      // Only update the state if the index was found
+      state = state.updateIn([ 'todos', index, 'isDone' ], (isDone) => { return !isDone; });
+    }
+
+    return state;
+  },
 
 });
