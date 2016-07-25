@@ -6,6 +6,7 @@
  - Webpack
  - Mocha & Enzyme
  - Babel with ES6 & ES7 support
+ - Hot reloading
 
 ## Usage
 ### Development
