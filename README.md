@@ -24,7 +24,7 @@
 #### -> npm run build
 
 ## Special thanks
-  The project is largely based on the following course by Cory House on [Pluralsight](https://www.pluralsight.com/courses/react-redux-react-router-es6 "Building Applications with React and Redux in ES6") so be sure to check it out.
+  The project is largely based on a course by Cory House on [Pluralsight](https://www.pluralsight.com/courses/react-redux-react-router-es6 "Building Applications with React and Redux in ES6") so be sure to check it out.
 
 ## Other helpful links
   TBD
