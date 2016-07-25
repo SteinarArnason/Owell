@@ -23,4 +23,7 @@ export default createConstants({
     ADD: null,
     TOGGLE: null,
   }),
+  CAR: keyMirror({
+    LOOKUP_SUCCESS: null,
+  }),
 });

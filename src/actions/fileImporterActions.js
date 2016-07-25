@@ -12,14 +12,14 @@ export function parseFile(file) {
     dispatch(ajaxCallStart());
 
     return fileImporterApi.parseRbFile(file)
-    .then((parsedFile) => {
+      .then((parsedFile) => {
 
-      dispatch(ajaxCallSuccess());
-      dispatch(parseFileSuccess(parsedFile));
-    }).catch((error) => {
-      dispatch(ajaxCallError(error));
-      throw error;
-    });
+        dispatch(ajaxCallSuccess());
+        dispatch(parseFileSuccess(parsedFile));
+      }).catch((error) => {
+        dispatch(ajaxCallError(error));
+        throw error;
+      });
 
   };
 
