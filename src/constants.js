@@ -21,5 +21,6 @@ export default createConstants({
   }),
   TODO: keyMirror({
     ADD: null,
+    TOGGLE: null,
   }),
 });
