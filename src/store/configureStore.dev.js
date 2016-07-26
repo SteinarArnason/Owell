@@ -25,7 +25,6 @@ const enhancer = compose(
 );
 
 export default function configureStore(initialState) {
-  // Nota Immutable.fromJS á state hérna? Sjá QU lausnina
   const store = createStore(rootReducer, Immutable.fromJS(initialState), enhancer);
 
   // Hot reload reducers (Webpack HMR has to be enabled)
