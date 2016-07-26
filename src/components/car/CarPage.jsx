@@ -2,12 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Car from './Car';
 import * as carActions from 'actions/carActions';
 
 class CarPage extends Component {
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
+    car: PropTypes.object.isRequired,
   }
 
   constructor(props, context) {
@@ -31,8 +33,10 @@ class CarPage extends Component {
         <br />
         <input
           type="text"
-          placeholder="Add todo"
+          placeholder="Lookup a car"
           onKeyDown={ this.onSubmit } />
+        <br />
+        <Car { ...this.props.car } />
       </div>
     );
   }
@@ -40,9 +44,8 @@ class CarPage extends Component {
 
 const mapStateToProps = (state, ownProps) => { //eslint-disable-line
   const carState = state.get('car');
-  console.log(carState.toJS());
   return {
-    // Map the application state to current file props
+    car: carState.toJS().information || {},
   };
 };
 
