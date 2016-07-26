@@ -1,7 +1,7 @@
 # Boilerplate
 
 ## Prerequisites for running this project
-  This project has been tested in Linux Mint and Windows 10 without any errors.
+  This project has been tested on Linux Mint and Windows 10 without any errors.
 
   - NodeJS (vX.X.X)
 
