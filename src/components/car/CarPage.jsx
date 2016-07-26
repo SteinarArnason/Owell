@@ -42,7 +42,7 @@ class CarPage extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => { //eslint-disable-line
+const mapStateToProps = (state) => {
   const carState = state.get('car');
   return {
     car: carState.toJS().information || {},
