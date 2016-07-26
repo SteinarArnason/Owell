@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomePage = () => {
-  const text = 'That\'s how I feel about webpack...';
+  const text = `That's how I feel about webpack...`;
 
   return (
     <div>
