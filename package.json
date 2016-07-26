@@ -19,6 +19,7 @@
     "postbuild": "babel-node tools/distServer.js"
   },
   "dependencies": {
+    "axios": "^0.13.1",
     "babel-polyfill": "^6.9.1",
     "bootstrap": "^3.3.6",
     "cheerio": "^0.20.0",
@@ -33,7 +34,6 @@
     "redux": "^3.5.2",
     "redux-immutablejs": "^0.0.8",
     "redux-thunk": "^2.1.0",
-    "superagent": "^2.1.0",
     "toastr": "^2.1.2"
   },
   "devDependencies": {
