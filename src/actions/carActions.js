@@ -8,24 +8,13 @@ export function carLookupSuccess(result) {
 
 export function lookupCarNumber(carNumber) {
 
-  /* return function(dispatch) {
-    return carEndpointApi.lookup(carNumber)
-      .then((result) => {
-        dispatch(carLookupSuccess(result));
-      }).catch((error) => {
-        throw error;
-      });
-  };*/
-
   return function(dispatch) {
     return carEndpointApi.lookup(carNumber)
-      .then((resolve) => {
-        console.log('Promise resolve');
-        console.log(resolve);
-        resolve(Object.assign({}, resolve));
-      }, (reject) => {
-        console.log('Promise reject');
-        console.log(reject);
+      .then((data) => {
+        dispatch(carLookupSuccess(data));
+      })
+      .catch((error) => {
+        throw error;
       });
   };
 
