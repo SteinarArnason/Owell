@@ -28,7 +28,9 @@
   * This is used to view the site in the browser with access to development tools like the Redux Dock and source map for chrome. This also opens up to localhost:3000 in chrome.
 
 ### Production
-  When running the production build script the contents of the /src folder will be minimized and put into a bundle file along with relevant html documents and other files needed to serve the website. This also opens up to localhost:3000 in chrome.
+  When running the production build script the contents of the /src folder will be minimized and put into a /dist folder. All javascript files will be bundled into one file. All the other files needed to server the website will also be moved to the /dist folder.
+  
+  Finally it opens up to localhost:3000 in chrome with the minified version.
 
 #### -> npm run build
 
