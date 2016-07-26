@@ -7,6 +7,10 @@ import * as todoActions from 'actions/todoActions';
 
 class TodoPage extends Component {
 
+  // What we expect the component to have access to. This is then
+  // bound together with the component in the mapStateToProps() and
+  // mapDispatchToProps() functions to the recieved props (this.props)
+  // .isRequired is an optional flag that shouldn't always be used
   static propTypes = {
     actions: PropTypes.object.isRequired,
     todos: PropTypes.arrayOf(
@@ -21,10 +25,16 @@ class TodoPage extends Component {
   constructor(props, context) {
     super(props, context);
 
+    // Component specific variables/settings, something that is unique
+    // to this component and doesn't need to be in the store
     this.state = {
       headerString: 'TODO PAGE',
     };
 
+    // Performing binds in the constructor are reccomended to imporive
+    // performance on renders.
+    // This version of binding is experimental (::this.functionName).
+    // The current standard way would be (this.functionName.bind(this))
     this.onSubmit = ::this.onSubmit;
     this.toggleTodo = ::this.toggleTodo;
   }
@@ -59,6 +69,8 @@ class TodoPage extends Component {
   }
 }
 
+// The 'state' recieved here is the store state for the whole application.
+// ownProps are other options/things ¯\_(ツ)_/¯ (e.g. params from the url)
 const mapStateToProps = (state, ownProps) => { //eslint-disable-line
   const todoState = state.get('todo');
 
@@ -67,6 +79,7 @@ const mapStateToProps = (state, ownProps) => { //eslint-disable-line
   };
 };
 
+// Maps the actions from first parameter to this.props.actions.actionName
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(todoActions, dispatch)
