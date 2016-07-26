@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './HomePage.css';
+
 const HomePage = () => {
   const text = 'That\'s how I feel about webpack...';
 
@@ -7,7 +9,7 @@ const HomePage = () => {
     <div>
       <br />
       <img
-        className="image"
+        className="fixedImageHeight"
         src={ 'http://i.imgur.com/kVLyJ9c.jpg' }
         alt="boohoo" />
       <p>{ text }</p>
