@@ -46,4 +46,4 @@
   - [ESLint react rules](https://github.com/yannickcr/eslint-plugin-react)
 
 # Notes
-  Be aware that certain packages are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the package.json file by removing the '^' from the version number or by trying to fix the errors caused by the update.
+  Be aware that certain packages are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the package.json file by removing the `^` from the version number or by trying to fix the errors caused by the update.
