@@ -7,6 +7,7 @@
  - [Webpack](http://webpack.github.io/docs/)
  - [Mocha](https://mochajs.org/) & [Enzyme](https://github.com/airbnb/enzyme/tree/master/docs)
  - [Babel](https://babeljs.io/) with ES6 & ES7 support
+ - [Axios](https://www.npmjs.com/package/axios) for HTTP requests
  - Hot reloading in development
 
 ## Usage
