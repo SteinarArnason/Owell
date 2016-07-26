@@ -26,6 +26,7 @@
 
 #### -> npm start
   * This is used to view the site in the browser with access to development tools like the Redux Dock and source map for chrome. This also opens up to localhost:3000 in chrome.
+    * To toggle the Redux Dock use <kbd>ctrl+h</kbd>, to move them around use <kbd>ctrl+q</kbd>.
 
 ### Production
   When running the production build script the contents of the /src folder will be minimized and put into a /dist folder. All javascript files will be bundled into one file. All the other files needed to server the website will also be moved to the /dist folder.
