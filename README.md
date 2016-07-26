@@ -4,6 +4,8 @@
   This project has been tested on Linux Mint and Windows 10 without any errors.
 
   - NodeJS (vX.X.X)
+  
+  - Atom with the reccomended packages found in the [Notes](https://github.com/IamStony/Owell#notes) section
 
   - possibly something more ... TODO
 
@@ -51,3 +53,19 @@
   - Be aware that certain packages are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the package.json file by removing the `^` from the version number or by trying to fix the errors caused by the update.
   
   - Not all linting errors will be caught by running the development/production scripts. They should however all be caught by Atom with relevant plugins.
+  
+  - I reccomend the following community packages for atom:
+    - [autocomplete-paths](https://atom.io/packages/autocomplete-paths)
+    - [file-icons](https://atom.io/packages/file-icons)
+    - [highlight-selected](https://atom.io/packages/highlight-selected)
+    - [language-babel](https://atom.io/packages/language-babel)
+    - [linter](https://atom.io/packages/linter)
+    - [linter-eslint](https://atom.io/packages/linter-eslint)
+    - [pigments](https://atom.io/packages/pigments)
+
+  - Other cool community packages for atom:
+    - [docblockr](https://atom.io/packages/docblockr)
+    - [emmet](https://atom.io/packages/emmet)
+    - [merge-conflicts](https://atom.io/packages/merge-conflicts)
+    - [pretty-json](https://atom.io/packages/pretty-json)
+    - [todo-show](https://atom.io/packages/todo-show)
