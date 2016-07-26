@@ -1,5 +1,12 @@
 # Boilerplate
 
+## Prerequisites for running this project
+  This project has been tested in Linux Mint and Windows 10 without any errors.
+
+  - NodeJS (vX.X.X)
+
+  - possibly something more ... TODO
+
 ## What it includes
  - [React](https://facebook.github.io/react/docs/getting-started.html)
  - [Redux](http://redux.js.org/index.html)
