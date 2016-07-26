@@ -1,6 +1,5 @@
 /* eslint-disable no-console, no-process-env */
 import webpack from 'webpack';
-// import webpackConfig from '../webpack.config.prod';
 import webpackConfig from '../webpack.production.config';
 import colors from 'colors';
 
