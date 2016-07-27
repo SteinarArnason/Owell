@@ -9,7 +9,10 @@
   
   - [Atom text editor](https://atom.io/) with the reccomended packages found in the [Notes](https://github.com/IamStony/Owell#notes) section
 
-  - possibly something more ... TODO
+  - Run the following command
+```
+-> npm run build
+```
 
 ## What it includes
  - [React](https://facebook.github.io/react/docs/getting-started.html)
