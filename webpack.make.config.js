@@ -1,4 +1,4 @@
-/* eslint-disable object-shorthand */
+/* eslint-disable object-shorthand, global-require */
 import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -35,16 +35,29 @@ module.exports = function(options) {
     ]
   };
 
+  const cssLoader = 'css-loader?modules' +
+                    '&importLoaders=1' +
+                    '&localIdentName=[name]__[local]___[hash:base64:5]' +
+                    '!postcss-loader';
+
   if (options.development) {
     module.loaders.push(
-      { test: /(\.css)$/, loaders: [ 'style', 'css' ] }
+      { test: /\.css$/, loaders: [ 'style-loader', cssLoader ] }
     );
   } else {
     options.plugins.push(new ExtractTextPlugin('styles.css'));
     module.loaders.push(
-      { test: /(\.css)$/, loader: ExtractTextPlugin.extract('css?sourceMap') }
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', cssLoader) }
     );
   }
+
+  const postcss = [
+    require('postcss-import')({
+      path: 'src',
+    }),
+    require('postcss-css-variables'),
+    require('autoprefixer'),
+  ];
 
   return {
     debug: options.debug,
@@ -59,6 +72,7 @@ module.exports = function(options) {
     resolve: {
       modulesDirectories: [ 'node_modules', 'src' ],
       extensions: [ '', '.js', '.jsx', '.css' ]
-    }
+    },
+    postcss: postcss,
   };
 };

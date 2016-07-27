@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Car from './Car';
 import * as carActions from 'actions/carActions';
 
+import defaultStyles from 'global.css';
+
 class CarPage extends Component {
 
   static propTypes = {
@@ -28,7 +30,7 @@ class CarPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className={ defaultStyles.pageContent }>
         <h1>{ 'Car lookup' }</h1>
         <br />
         <input

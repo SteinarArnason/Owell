@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
+import styles from 'global.css';
+
 const Header = () => {
   return (
-    <nav>
+    <nav className={ styles.pageHeader }>
       <IndexLink to="/" activeClassName="active" >{ 'Home' }</IndexLink>
       { " | " }
       <Link to="/todo-list" activeClassName="active" >{ 'Todo List' }</Link>
