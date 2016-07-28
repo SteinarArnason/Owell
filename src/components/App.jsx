@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 
 // Imports from user defined modules/files
 import Header from './common/Header';
+import Footer from './common/Footer';
+
+// Import styles
 
 class App extends Component {
 
@@ -17,6 +20,7 @@ class App extends Component {
       <div>
         <Header />
         { this.props.children }
+        <Footer />
       </div>
     );
   }

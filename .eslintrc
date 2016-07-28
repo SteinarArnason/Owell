@@ -154,7 +154,7 @@
     "no-undef": 2,
     "no-undef-init": 2,
     "no-undefined": 0,
-    "no-unused-vars": [1, {"varsIgnorePattern": "styles"}],
+    "no-unused-vars": 1,
     "no-use-before-define": 2,
 
     ## Node.js and CommonJS

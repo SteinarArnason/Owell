@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import TodoList from './TodoList';
 import * as todoActions from 'actions/todoActions';
 
+import defaultStyles from 'global.css';
+
 class TodoPage extends Component {
 
   // What we expect the component to have access to. This is then
@@ -53,7 +55,7 @@ class TodoPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className={ defaultStyles.pageContent }>
         <h1>{ this.state.headerString }</h1>
         <p>{ 'A list of stuff to be done' }</p>
         <br />
