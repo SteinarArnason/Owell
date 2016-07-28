@@ -3,9 +3,9 @@
 ## Prerequisites for running this project
   This project has been tested on Linux Mint and Windows 10 without any errors.
 
-  - [NodeJS (vX.X.X)](https://nodejs.org)
+  - [NodeJS (v4.4.5)](https://nodejs.org) (Other versions are likely to work, fallback to this if they don't)
   
-  - npm (vX.X.X) installed with [NodeJS](https://nodejs.org)
+  - npm (v2.15.5) installed with [NodeJS](https://nodejs.org) (Other versions are likely to work, fallback to this if they don't)
   
   - [Atom text editor](https://atom.io/) with the reccomended packages found in the [Notes](https://github.com/IamStony/Owell#notes) section
 
