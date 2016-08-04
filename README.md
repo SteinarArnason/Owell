@@ -11,7 +11,7 @@
 
   - Run the following command
 ```
--> npm run build
+-> npm install
 ```
 
 ## What it includes
