@@ -1,13 +1,13 @@
 # Boilerplate
 
 ## Prerequisites for running this project
-  This project has been tested on Linux Mint and Windows 10 without any errors.
+  This project has been tested on Linux Mint and Windows 10 using the following versions without any errors. Newer versions are also likely to work but you can always fallback to the version number specified.
 
-  - [NodeJS (v4.4.5)](https://nodejs.org) (Other versions are likely to work, fallback to this if they don't)
+  - [NodeJS (v4.4.5)](https://nodejs.org)
   
-  - npm (v2.15.5) installed with [NodeJS](https://nodejs.org) (Other versions are likely to work, fallback to this if they don't)
+  - npm (v2.15.5) is installed automatically with NodeJS
   
-  - [Atom text editor](https://atom.io/) with the reccomended packages found in the [Notes](https://github.com/IamStony/Owell#notes) section
+  - [Atom text editor](https://atom.io/) with the recommended packages found in the [Notes](#notes) section
 
   - Run the following command
 ```
@@ -26,7 +26,7 @@
 
 ## Usage
 ### Development
-  There are two seperate scripts used in development.
+  There are two separate scripts used in development.
 ```
 -> npm run test:watch
 ```
@@ -59,7 +59,7 @@
   
   - Not all linting errors will be caught by running the development/production scripts. They should however all be caught by Atom with relevant plugins.
   
-  - I reccomend the following community packages for atom:
+  - I recommend the following community packages for atom:
     - [autocomplete-paths](https://atom.io/packages/autocomplete-paths)
     - [file-icons](https://atom.io/packages/file-icons)
     - [highlight-selected](https://atom.io/packages/highlight-selected)
@@ -70,7 +70,7 @@
 
   - Other cool community packages for atom:
     - [docblockr](https://atom.io/packages/docblockr)
-    - [emmet](https://atom.io/packages/emmet)
+    - [emmet](https://atom.io/packages/emmet) - [emmet cheatsheet](http://docs.emmet.io/cheat-sheet/)
     - [merge-conflicts](https://atom.io/packages/merge-conflicts)
     - [pretty-json](https://atom.io/packages/pretty-json)
     - [todo-show](https://atom.io/packages/todo-show)
