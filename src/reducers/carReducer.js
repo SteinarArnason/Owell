@@ -11,8 +11,8 @@ const initialState = Immutable.fromJS({
 
 export default createReducer(initialState, {
 
-  [constants.CAR.LOOKUP_SUCCESS]: (state, { result }) => {
-    state = state.set('information', result);
+  [constants.CAR.LOOKUP_SUCCESS]: (state, { information }) => {
+    state = state.set('information', information);
     return state;
   },
 

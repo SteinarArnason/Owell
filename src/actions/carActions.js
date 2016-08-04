@@ -2,8 +2,8 @@ import constants from 'constants';
 // import carEndpointApi from 'api/mockCarEndpointApi';
 import carEndpointApi from 'api/carEndpointApi';
 
-export function carLookupSuccess(result) {
-  return { type: constants.CAR.LOOKUP_SUCCESS, result };
+export function carLookupSuccess(information) {
+  return { type: constants.CAR.LOOKUP_SUCCESS, information };
 }
 
 export function lookupCarNumber(carNumber) {
