@@ -7,6 +7,7 @@ import * as todoActions from 'actions/todoActions';
 
 import defaultStyles from 'global.css';
 
+// This component is exported so that it can be tested with jest/enzyme
 export class TodoPage extends Component {
 
   // What we expect the component to have access to. This is then

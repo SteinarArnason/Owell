@@ -7,8 +7,7 @@ import * as carActions from 'actions/carActions';
 
 import defaultStyles from 'global.css';
 
-// This component is exported so that it can be tested with jest/enzyme
-export class CarPage extends Component {
+class CarPage extends Component {
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
