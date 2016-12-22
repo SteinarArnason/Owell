@@ -4,9 +4,17 @@
   "description": "Boilerplate code using React and Redux with Mocha/Enzyme unit tests and ES6/ES7 syntax",
   "license": "MIT",
   "jest": {
-    "testPathDirs": ["src"],
-    "moduleFileExtensions": ["js","jsx"],
-    "moduleDirectories": ["src","node_modules"],
+    "testPathDirs": [
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
     "moduleNameMapper": {
       "\\.(png|gif|woff|woff2)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css)$": "identity-obj-proxy"
@@ -74,7 +82,6 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.4.1",
-    "react-test-renderer": "^15.4.1",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",

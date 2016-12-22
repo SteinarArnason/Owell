@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Immutable from 'immutable';
 import _ from 'lodash';
-import TestUtils from 'react-addons-test-utils';
 
 import { TodoPage, mapStateToProps, mapDispatchToProps } from './TodoPage';
 import * as todoActions from 'actions/todoActions';
