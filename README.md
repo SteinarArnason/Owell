@@ -13,13 +13,17 @@
 ```
 -> npm install
 ```
+  or alternatively
+```
+-> yarn install
+```
 
 ## What it includes
  - [React](https://facebook.github.io/react/docs/getting-started.html)
  - [Redux](http://redux.js.org/index.html)
  - [ImmutableJS](https://facebook.github.io/immutable-js/)
  - [Webpack](http://webpack.github.io/docs/)
- - [Mocha](https://mochajs.org/) & [Enzyme](https://github.com/airbnb/enzyme/tree/master/docs)
+ - [Jest](https://facebook.github.io/jest/) & [Enzyme](https://github.com/airbnb/enzyme/tree/master/docs)
  - [Babel](https://babeljs.io/) with ES6 & ES7 support
  - [Axios](https://www.npmjs.com/package/axios) for HTTP requests
  - Hot reloading in development
@@ -28,7 +32,7 @@
 ### Development
   There are two separate scripts used in development.
 ```
--> npm run test:watch
+-> npm run jest:watch
 ```
   * This is used while in TDD, only runs unit tests defined. Does not launch the application nor build it with webpack.
 ```
