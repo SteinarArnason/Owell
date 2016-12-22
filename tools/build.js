@@ -1,4 +1,5 @@
 /* eslint-disable no-console, no-process-env */
+import path from 'path';
 import webpack from 'webpack';
 import webpackConfig from '../webpack.production.config';
 import colors from 'colors';
@@ -13,19 +14,26 @@ webpack(webpackConfig).run((webpackError, stats) => {
     return 1;
   }
 
-  const jsonStats = stats.toJson();
+  const statsResult = stats.toString({
+    hash: true,
+    version: true,
+    timings: true,
+    assets: false,
+    chunks: false,
+    modules: false,
+    reasons: false,
+    children: false,
+    source: false,
+    errors: true,
+    errorDetails: true,
+    warnings: false,
+    publicPath: false
+  });
 
-  if (jsonStats.hasErrors) {
-    return jsonStats.errors.map((error) => { return console.log(error.erd); });
-  }
+  console.log(`${ statsResult }`);
+  console.log(`For more detailed webpack output tweak the options for 'statsResult' in ${ path.join(__dirname, 'build.js') }`);
 
-  if (jsonStats.hasWarnings) {
-    jsonStats.warnings.map((warning) => { return console.log(warning.yellow); });
-  }
-
-  console.log(`Webpack stats: ${ stats }`);
-
-  console.log(colors.green('Compiled!'));
+  console.log(colors.green('\nCompiled!'));
 
   return 0;
 });

@@ -1,4 +1,4 @@
-import constants from 'constants';
+import constants from 'reduxConstants';
 import fileImporterApi from 'api/mockFileImporterApi';
 import { ajaxCallStart, ajaxCallError, ajaxCallSuccess } from './ajaxStatusActions';
 

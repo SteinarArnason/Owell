@@ -1,4 +1,4 @@
-import constants from 'constants';
+import constants from 'reduxConstants';
 
 export function ajaxCallStart() {
   return { type: constants.AJAX.CALL_START };

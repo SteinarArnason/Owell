@@ -1,10 +1,7 @@
-import expect from 'expect';
 import Immutable from 'immutable';
 
-// Any imports not from node_modules have to be done relative to current path
-// so that unit tests run correctly
 import reducer from './todoReducer';
-import * as actions from '../actions/todoActions';
+import * as actions from 'actions/todoActions';
 
 const initialState = Immutable.fromJS({
   todos: [
@@ -48,11 +45,11 @@ describe('todoReducer', () => {
     const newState = reducer(initialState, action);
 
     // assert
-    const todos5 = Immutable.fromJS({ id: 10, isDone: false, text: 'npm run start' });
+    const todos = Immutable.fromJS({ id: 10, isDone: false, text: 'npm run start' });
     expect(newState.get('todos').count())
       .toEqual(5);
     expect(newState.get('todos').last())
-      .toEqual(todos5);
+      .toEqual(todos);
   });
 
   describe('toggleTodo()', () => {

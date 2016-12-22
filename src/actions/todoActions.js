@@ -1,4 +1,4 @@
-import constants from '../constants';
+import constants from 'reduxConstants';
 
 export function addTodo(todo) {
   return { type: constants.TODO.ADD, todo };

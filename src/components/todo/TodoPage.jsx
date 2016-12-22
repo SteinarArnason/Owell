@@ -7,7 +7,7 @@ import * as todoActions from 'actions/todoActions';
 
 import defaultStyles from 'global.css';
 
-class TodoPage extends Component {
+export class TodoPage extends Component {
 
   // What we expect the component to have access to. This is then
   // bound together with the component in the mapStateToProps() and
@@ -73,18 +73,18 @@ class TodoPage extends Component {
 
 // The 'state' recieved here is the store state for the whole application.
 // ownProps are other options/things ¯\_(ツ)_/¯ (e.g. params from the url)
-const mapStateToProps = (state, ownProps) => { //eslint-disable-line
+export const mapStateToProps = (state, ownProps) => { //eslint-disable-line
   const todoState = state.get('todo');
 
   return {
-    todos: todoState.get('todos').toJS() || []
+    todos: todoState.get('todos').toJS() || [],
   };
 };
 
 // Maps the actions from first parameter to this.props.actions.actionName
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(todoActions, dispatch)
+    actions: bindActionCreators(todoActions, dispatch),
   };
 };
 

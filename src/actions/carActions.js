@@ -1,4 +1,4 @@
-import constants from 'constants';
+import constants from 'reduxConstants';
 // import carEndpointApi from 'api/mockCarEndpointApi';
 import carEndpointApi from 'api/carEndpointApi';
 

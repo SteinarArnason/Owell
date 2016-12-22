@@ -4,10 +4,10 @@
   This project has been tested on Linux Mint and Windows 10 using the following versions without any errors. Newer versions are also likely to work but you can always fallback to the version number specified.
 
   - [NodeJS (v4.4.5)](https://nodejs.org)
-  
-  - npm (v2.15.5) is installed automatically with NodeJS
-  
-  - [Atom text editor](https://atom.io/) with the recommended packages found in the [Notes](#notes) section
+
+  - npm (v2.15.5) installed automatically with [NodeJS](https://nodejs.org)
+
+  - [Atom text editor](https://atom.io/) with the recommended packages found in the Notes section
 
   - Run the following command
 ```
@@ -39,7 +39,7 @@
 
 ### Production
   When running the production build script the contents of the /src folder will be minimized and put into a /dist folder. All javascript files will be bundled into one file. All the other files needed to server the website will also be moved to the /dist folder.
-  
+
   Finally it opens up to localhost:3000 in chrome with the minified version.
 ```
 -> npm run build
@@ -56,9 +56,9 @@
 
 # Notes
   - Be aware that certain packages are subject to updates and could potentially break this build. If this is the case you can either revert said packages to the version specified in the package.json file by removing the `^` from the version number or by trying to fix the errors caused by the update.
-  
+
   - Not all linting errors will be caught by running the development/production scripts. They should however all be caught by Atom with relevant plugins.
-  
+
   - I recommend the following community packages for atom:
     - [autocomplete-paths](https://atom.io/packages/autocomplete-paths)
     - [file-icons](https://atom.io/packages/file-icons)
@@ -70,7 +70,7 @@
 
   - Other cool community packages for atom:
     - [docblockr](https://atom.io/packages/docblockr)
-    - [emmet](https://atom.io/packages/emmet) - [emmet cheatsheet](http://docs.emmet.io/cheat-sheet/)
+    - [emmet](https://atom.io/packages/emmet)
     - [merge-conflicts](https://atom.io/packages/merge-conflicts)
     - [pretty-json](https://atom.io/packages/pretty-json)
     - [todo-show](https://atom.io/packages/todo-show)
