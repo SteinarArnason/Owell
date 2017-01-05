@@ -102,6 +102,7 @@ or alternatively (reccomended)
   * `src/components`: everything but the `App.jsx` file. And in that file:
     * remove user defined modules/files imports and their references.
     * replace `{ this.props.children }` with something like `<p>Hello world</p>` for some output.
+    * remove the `children` prop from propTypes.
   * `src/selectors`: delete all files.
   * `src/reducers`: delete all files except `index.js` and from that file remove the imports/references from user defined modules/files.
   * `src/global.css`: you can safely remove everything here except maybe the import at the top (unless you don't want a `variables.css` file). If you don't want to use global css then:
