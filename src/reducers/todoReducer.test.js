@@ -14,15 +14,6 @@ const initialState = Immutable.fromJS({
 
 describe('todoReducer', () => {
 
-  it('Placeholder test', () => {
-    // arrange
-
-    // act
-
-    // assert
-    expect(true).toEqual(true);
-  });
-
   it('should initially have 4 entries in the array', () => {
     // arrange
     const initialTodoReducerState = reducer(initialState);

@@ -9,7 +9,7 @@ export function carLookupSuccess(information) {
 export function lookupCarNumber(carNumber) {
 
   return function(dispatch) {
-    return carEndpointApi.lookup(carNumber)
+    return carEndpointApi.lookupAxios(carNumber)
       .then((data) => {
         dispatch(carLookupSuccess(data.results[0]));
       })

@@ -1,26 +1,33 @@
-import React, { PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
-const Car = ({ number, subType, registryNumber, pollution, weight }) => {
-  if (registryNumber === undefined) {
-    return null;
+export default class Car extends PureComponent {
+
+  static propTypes = {
+    car: PropTypes.shape({
+      number: PropTypes.string,
+      pollution: PropTypes.string,
+      registryNumber: PropTypes.string,
+      subType: PropTypes.string,
+      weight: PropTypes.string,
+    }),
   }
-  return (
-    <div>
-      <h2>{ `Undertegund: ${ subType }` }</h2>
-      <h2>{ `Skráningar númer: ${ registryNumber }` }</h2>
-      <h2>{ `Fast númer: ${ number }` }</h2>
-      <h2>{ `Mengun: ${ pollution }` }</h2>
-      <h2>{ `Þyngd: ${ weight }` }</h2>
-    </div>
-  );
-};
 
-Car.propTypes = {
-  number: PropTypes.string,
-  pollution: PropTypes.string,
-  registryNumber: PropTypes.string,
-  subType: PropTypes.string,
-  weight: PropTypes.string,
-};
+  render() {
+    const isEmpty = Object.keys(this.props.car).length === 0;
 
-export default Car;
+    if (isEmpty) {
+      return null;
+    }
+
+    const car = this.props.car;
+    return (
+      <div>
+        <h2>{ `Undertegund: ${ car.subType }` }</h2>
+        <h2>{ `Skráningar númer: ${ car.registryNumber }` }</h2>
+        <h2>{ `Fast númer: ${ car.number }` }</h2>
+        <h2>{ `Mengun: ${ car.pollution }` }</h2>
+        <h2>{ `Þyngd: ${ car.weight }` }</h2>
+      </div>
+    );
+  }
+};

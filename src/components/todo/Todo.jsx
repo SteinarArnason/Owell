@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
 import styles from './Todo.css';
 
-const Todo = (item) => {
-  const { todo } = item;
+export default class Todo extends PureComponent {
 
-  if (todo.isDone) {
-    return <strike className={ styles.cursorPointer }>{ todo.text }</strike>;
+  static propTypes = {
+    todo: PropTypes.object.isRequired,
   }
 
-  return <div className={ styles.cursorPointer }>{ todo.text }</div>;
-};
-
-export default Todo;
+  render() {
+    const todo = this.props.todo.isDone
+      ? <strike className={ styles.cursorPointer }>{ this.props.todo.text }</strike>
+      : <div className={ styles.cursorPointer }>{ this.props.todo.text }</div>;
+    return (
+      todo
+    );
+  }
+}

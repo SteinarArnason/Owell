@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import WebpackStrip from 'strip-loader';
 import webpackMerge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
@@ -22,6 +23,7 @@ export default webpackMerge(baseConfig, {
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', cssLoader) },
+      { test: /\.jsx?$/, loader: WebpackStrip.loader('console.log') },
     ],
   },
 

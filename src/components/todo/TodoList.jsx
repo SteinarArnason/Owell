@@ -1,32 +1,33 @@
-import React, { PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
 import Todo from './Todo';
 
-const TodoList = ({ todos, toggle }) => {
-  return (
-    <ul>
-      { todos.map((t) => {
-        return (
-          <li
-            key={ t.id }
-            onClick={ () => { toggle(t.id); } } >
-            <Todo todo={ t } />
-          </li>
-        );
-      }) }
-    </ul>
-  );
-};
+export default class TodoList extends PureComponent {
 
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      isDone: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
-  toggle: PropTypes.func.isRequired,
-};
+  static propTypes = {
+    todos: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        isDone: PropTypes.bool.isRequired,
+        text: PropTypes.string.isRequired,
+      }).isRequired
+    ).isRequired,
+    toggle: PropTypes.func.isRequired,
+  };
 
-export default TodoList;
+  render() {
+    return (
+      <ul>
+        { this.props.todos.map((t) => {
+          return (
+            <li
+              key={ t.id }
+              onClick={ () => { this.props.toggle(t.id); } } >
+              <Todo todo={ t } />
+            </li>
+          );
+        }) }
+      </ul>
+    );
+  }
+}

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Car from './Car';
 import * as carActions from 'actions/carActions';
+import { filterCar } from 'selectors/carSelector';
 
 import defaultStyles from 'global.css';
 
@@ -38,7 +39,7 @@ class CarPage extends Component {
           placeholder="Lookup a car"
           onKeyDown={ this.onSubmit } />
         <br />
-        <Car { ...this.props.car } />
+        <Car car={ this.props.car } />
       </div>
     );
   }
@@ -46,8 +47,9 @@ class CarPage extends Component {
 
 const mapStateToProps = (state) => {
   const carState = state.get('car');
+
   return {
-    car: carState.toJS().information || {},
+    car: filterCar(carState),
   };
 };
 
