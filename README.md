@@ -19,7 +19,7 @@
 
   - npm (v2.15.5) installed automatically with [NodeJS](https://nodejs.org)
 
-  - [Atom text editor](https://atom.io/) with the recommended packages found in the Notes section
+  - [Atom text editor](https://atom.io/) (see reccomended packages in the Notes section) or another text editor of your choice.
 
   - Run the following command
 ```
