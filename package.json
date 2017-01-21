@@ -24,7 +24,7 @@
     "prestart": "babel-node tools/startMessage.js",
     "start": "run-s lint jest open:src",
     "open:src": "babel-node tools/srcServer.js",
-    "lint": "node_modules/.bin/esw webpack.*.config.* src tools",
+    "lint": "node_modules/.bin/esw webpack.config.*.js src tools",
     "jest": "jest --verbose",
     "jest:watch": "jest --verbose --watchAll",
     "jest:coverage": "jest --coverage --verbose",

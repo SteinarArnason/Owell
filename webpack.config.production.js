@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-import baseConfig from './webpack.base.config';
+import baseConfig from './webpack.config.base';
 
 const GLOBALS = {
   __DEV__: false,
