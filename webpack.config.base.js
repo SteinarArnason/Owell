@@ -3,6 +3,7 @@ import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import postcssVariables from 'postcss-css-variables';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { LoaderOptionsPlugin } from 'webpack';
 
 export default {
 
@@ -23,9 +24,11 @@ export default {
   },
 
   resolve: {
-    root: path.join(__dirname, 'src'),
-    modulesDirectories: [ 'src', 'node_modules' ],
-    extensions: [ '', '.js', '.jsx', '.css' ],
+    modules: [
+      'node_modules',
+      path.join(__dirname, 'src'),
+    ],
+    extensions: [ '.js', '.jsx', '.css' ],
   },
 
   plugins: [
@@ -35,12 +38,21 @@ export default {
       filename: 'index.html',
       inject: false,
     }),
+    new LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          postcssImport({ path: 'src' }),
+          postcssVariables,
+          autoprefixer,
+        ]
+      }
+    }),
   ],
-
-  postcss: [
-    postcssImport({ path: 'src' }),
-    postcssVariables,
-    autoprefixer,
-  ],
+  //
+  // postcss: [
+  //   postcssImport({ path: 'src' }),
+  //   postcssVariables,
+  //   autoprefixer,
+  // ],
 
 };

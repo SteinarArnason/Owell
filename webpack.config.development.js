@@ -8,13 +8,9 @@ const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('development'),
 };
 
-const cssLoader = 'css-loader?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss-loader';
-
 export default webpackMerge(baseConfig, {
 
-  debug: true,
   devtool: 'cheap-module-eval-source-map',
-  noInfo: false,
 
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
@@ -23,8 +19,15 @@ export default webpackMerge(baseConfig, {
   ],
 
   module: {
-    loaders: [
-      { test: /\.css$/, loaders: [ 'style-loader', cssLoader ] },
+    rules: [
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&localIdentName=[name]_[local]__[hash:base64:5]',
+          'postcss-loader',
+        ],
+      },
     ],
   },
 
